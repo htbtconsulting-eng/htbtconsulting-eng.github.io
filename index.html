@@ -35,15 +35,29 @@
       margin-bottom: 30px;
     }
 
-    .cloud-icon,
-    .ai-icon {
-      background: linear-gradient(135deg, #d8fff3, #7dd3fc);
+   .cloud-icon {
+      background: linear-gradient(135deg, #d8fff3, #8fd3ff);
       color: #0f766e;
-      border-radius: 28px;
-      padding: 22px 30px;
-      font-size: 3rem;
-      font-weight: bold;
-      box-shadow: 0 12px 30px rgba(15, 118, 110, 0.15);
+      border-radius: 24px;
+      width: 86px;
+      height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 24px rgba(15, 118, 110, 0.12);
+    }
+    .ai-icon {
+      background: linear-gradient(135deg, #d8fff3, #8fd3ff);
+      color: #0f766e;
+      border-radius: 24px;
+      width: 86px;
+      height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(15, 118, 110, 0.12);
     }
 
     .card {
@@ -126,17 +140,30 @@
     }
 
     .visual-card {
-      min-height: 220px;
-      border-radius: 22px;
+      min-height: 260px;
+      border-radius: 26px;
       background:
-        radial-gradient(circle at top right, #bfdbfe, transparent 38%),
-        linear-gradient(135deg, #e6fff8, #f8fbff);
+        radial-gradient(circle at top right, rgba(191,219,254,0.8), transparent 35%),
+        linear-gradient(135deg, #effff9, #f5f9ff);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
     }
 
+    .dots {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 90px;
+      height: 90px;
+      background-image: radial-gradient(#bfdbfe 1.5px, transparent 1.5px);
+      background-size: 12px 12px;
+      opacity: 0.5;
+    }
+    
     .laptop {
       width: 260px;
       height: 150px;
@@ -216,13 +243,22 @@
 <body>
   <main class="hero">
     <div class="top-visuals">
-      <div class="cloud-icon">☁</div>
+      <div class="cloud-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M17.5 19H9a7 7 0 1 1 1.7-13.8A5 5 0 1 1 17.5 19Z"/>
+        </svg>
+      </div>
       <div class="ai-icon">AI</div>
     </div>
 
     <div class="card">
       <div class="intro-grid">
-        <div class="icon-circle">👩🏽‍💻</div>
+        <div class="icon-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Z"/>
+            <path d="M20 21a8 8 0 0 0-16 0"/>
+          </svg>
+        </div>
 
         <div>
           <h2>Welcome</h2>
@@ -245,7 +281,13 @@
       <div class="content-grid">
         <div>
           <div class="section-grid">
-            <div class="icon-circle">🎯</div>
+            <div class="icon-circle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+            </div>
             <div>
               <h2>Current Focus</h2>
               <p>
@@ -256,7 +298,13 @@
           </div>
 
           <div class="section-grid">
-            <div class="icon-circle">🏅</div>
+            <div class="icon-circle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+            </div>
             <div>
               <h2>Certifications</h2>
               <ul>
@@ -270,7 +318,13 @@
           </div>
 
           <div class="section-grid">
-            <div class="icon-circle">☁️</div>
+           <div class="icon-circle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 13v8"/>
+                <path d="m16 17-4 4-4-4"/>
+                <path d="M20.39 18.39A5.5 5.5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.3"/>
+              </svg>
+            </div>
             <div>
               <h2>Projects</h2>
               <p>
@@ -281,6 +335,7 @@
         </div>
 
         <div class="visual-card">
+          <div class="dots"></div>
           <div class="laptop"></div>
         </div>
       </div>
