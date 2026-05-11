@@ -4,125 +4,293 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UJ | AI & Cloud Portfolio</title>
+
   <style>
     html {
       scroll-behavior: smooth;
     }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom right, #f4fff9, #eef7ff);
+      background:
+        radial-gradient(circle at top left, #d8fff3, transparent 35%),
+        radial-gradient(circle at top right, #dbeafe, transparent 35%),
+        linear-gradient(to bottom right, #f4fff9, #eef7ff);
       color: #1f2937;
       -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 20px;
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 70px 20px 40px;
+      position: relative;
+    }
+
+    .top-visuals {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .cloud-icon,
+    .ai-icon {
+      background: linear-gradient(135deg, #d8fff3, #7dd3fc);
+      color: #0f766e;
+      border-radius: 28px;
+      padding: 22px 30px;
+      font-size: 3rem;
+      font-weight: bold;
+      box-shadow: 0 12px 30px rgba(15, 118, 110, 0.15);
     }
 
     .card {
-      background-color: rgba(255, 255, 255, 0.95);
+      background-color: rgba(255, 255, 255, 0.96);
       padding: 48px;
-      border-radius: 20px;
+      border-radius: 24px;
       border: 1px solid #dbeafe;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      backdrop-filter: blur(6px);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
+      backdrop-filter: blur(8px);
+    }
+
+    .intro-grid,
+    .section-grid {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .icon-circle {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background-color: #dffcf3;
+      color: #0f766e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 8px 18px rgba(15, 118, 110, 0.08);
     }
 
     h1 {
-      margin-top: 0;
-      font-size: 2.4rem;
+      margin: 0 0 18px;
+      font-size: 3rem;
       color: #0f172a;
+      letter-spacing: -1px;
     }
 
     h2 {
-      margin-top: 36px;
+      margin-top: 0;
       margin-bottom: 12px;
       color: #0f766e;
       font-size: 1.05rem;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       font-weight: 700;
     }
 
     p {
-      line-height: 1.8;
+      line-height: 1.75;
       font-size: 1.05rem;
       color: #374151;
+      margin-top: 0;
     }
-    
+
     ul {
       line-height: 1.7;
       font-size: 1.05rem;
       padding-left: 22px;
+      margin-top: 0;
     }
-    
+
     li {
       margin-bottom: 6px;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 22px;
-      background: linear-gradient(to right, #10a37f, #0f766e);
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-      transition: all 0.25s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(16, 163, 127, 0.25);
     }
 
     .divider {
       border: none;
       height: 1px;
       background: linear-gradient(to right, transparent, #cbd5e1, transparent);
-      margin: 36px 0;
+      margin: 34px 0;
+    }
+
+    .visual-card {
+      min-height: 220px;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at top right, #bfdbfe, transparent 38%),
+        linear-gradient(135deg, #e6fff8, #f8fbff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .laptop {
+      width: 260px;
+      height: 150px;
+      border-radius: 14px;
+      background: #0f172a;
+      position: relative;
+      box-shadow: 0 18px 30px rgba(15, 23, 42, 0.18);
+    }
+
+    .laptop::before {
+      content: "☁";
+      position: absolute;
+      color: white;
+      font-size: 4rem;
+      left: 90px;
+      top: 35px;
+    }
+
+    .laptop::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 14px;
+      background: #cbd5e1;
+      border-radius: 0 0 18px 18px;
+      left: -20px;
+      bottom: -18px;
+    }
+
+    .button-row {
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 26px;
+      background: linear-gradient(to right, #10a37f, #0f766e);
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 18px rgba(16, 163, 127, 0.22);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(16, 163, 127, 0.30);
+    }
+
+    @media (max-width: 800px) {
+      .content-grid,
+      .intro-grid,
+      .section-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .top-visuals {
+        gap: 16px;
+      }
+
+      h1 {
+        font-size: 2.3rem;
+      }
+
+      .card {
+        padding: 30px;
+      }
+
+      .visual-card {
+        display: none;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
+  <main class="hero">
+    <div class="top-visuals">
+      <div class="cloud-icon">☁</div>
+      <div class="ai-icon">AI</div>
+    </div>
+
     <div class="card">
-      <h2>Welcome</h2>
-      <h1>Hi, I'm Jill</h1>
-      <p>
-        I’m transitioning from IoT and hardware-focused work into AI-related cloud-focused roles,
-        while building on a foundation of cross-functional program execution
-        and customer engagement.
-      </p>
-      <p>
-        This site is where I'll share the projects I build.
-      </p>
+      <div class="intro-grid">
+        <div class="icon-circle">👩🏽‍💻</div>
+
+        <div>
+          <h2>Welcome</h2>
+          <h1>Hi, I'm Jill</h1>
+
+          <p>
+            I’m transitioning from IoT and hardware-focused work into AI-related cloud-focused roles,
+            while building on a foundation of cross-functional program execution
+            and customer engagement.
+          </p>
+
+          <p>
+            This site is where I'll share the projects I build.
+          </p>
+        </div>
+      </div>
 
       <hr class="divider">
-      
-      <h2>Current Focus</h2>
-      <p>
-        I’m currently focused on AI-related skill-building using AWS Cloud
-        and creating simple projects that strengthen my technical portfolio.
-      </p>
-     <h2>Certifications</h2>
-    <ul>
-      <li>AWS Certified Cloud Practitioner</li>
-      <li>AWS Certified AI Practitioner - Target Q2'26</li>
-      <li>Project Management Professional (PMP)</li>
-      <li>ITIL Foundation</li>
-      <li>Lean Six Sigma Green Belt</li>
-    </ul>
-      <h2>Projects</h2>
-      <p>
-      Projects coming soon. This site will grow as I continue building and publishing my work.
-      </p>
-      <a class="button" href="https://www.linkedin.com/in/burrell/" target="_blank">Visit My LinkedIn</a>
+
+      <div class="content-grid">
+        <div>
+          <div class="section-grid">
+            <div class="icon-circle">🎯</div>
+            <div>
+              <h2>Current Focus</h2>
+              <p>
+                I’m currently focused on AI-related skill-building using AWS Cloud
+                and creating simple projects that strengthen my technical portfolio.
+              </p>
+            </div>
+          </div>
+
+          <div class="section-grid">
+            <div class="icon-circle">🏅</div>
+            <div>
+              <h2>Certifications</h2>
+              <ul>
+                <li>AWS Certified Cloud Practitioner</li>
+                <li>AWS Certified AI Practitioner - Target Q2'26</li>
+                <li>Project Management Professional (PMP)</li>
+                <li>ITIL Foundation</li>
+                <li>Lean Six Sigma Green Belt</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="section-grid">
+            <div class="icon-circle">☁️</div>
+            <div>
+              <h2>Projects</h2>
+              <p>
+                Projects coming soon. This site will grow as I continue building and publishing my work.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="visual-card">
+          <div class="laptop"></div>
+        </div>
+      </div>
+
+      <div class="button-row">
+        <a class="button" href="https://www.linkedin.com/in/burrell/" target="_blank">
+          Visit My LinkedIn
+        </a>
+      </div>
     </div>
-  </div>
+  </main>
 </body>
 </html>
