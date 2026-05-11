@@ -24,10 +24,28 @@
     .hero {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 70px 20px 40px;
+      padding: 40px 20px 40px;
       position: relative;
     }
 
+    .flow-lines {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      height: 180px;
+      background:
+        radial-gradient(circle at 20% 40%, rgba(255,255,255,0.9) 0 4px, transparent 5px),
+        repeating-linear-gradient(
+          160deg,
+          transparent 0 18px,
+          rgba(255,255,255,0.45) 19px,
+          transparent 21px
+        );
+      opacity: 0.75;
+      pointer-events: none;
+    }
+    
     .top-visuals {
       display: flex;
       justify-content: space-between;
@@ -39,8 +57,8 @@
       background: linear-gradient(135deg, #d8fff3, #8fd3ff);
       color: #0f766e;
       border-radius: 24px;
-      width: 86px;
-      height: 86px;
+      width: 108px;
+      height: 108px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -50,8 +68,8 @@
       background: linear-gradient(135deg, #d8fff3, #8fd3ff);
       color: #0f766e;
       border-radius: 24px;
-      width: 86px;
-      height: 86px;
+      width: 108px;
+      height: 108px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -164,33 +182,116 @@
       opacity: 0.5;
     }
     
-    .laptop {
-      width: 260px;
-      height: 150px;
-      border-radius: 14px;
-      background: #0f172a;
+    .cloud-laptop {
       position: relative;
-      box-shadow: 0 18px 30px rgba(15, 23, 42, 0.18);
+      width: 330px;
+      height: 230px;
     }
-
-    .laptop::before {
-      content: "☁";
+    
+    .screen {
       position: absolute;
-      color: white;
-      font-size: 4rem;
-      left: 90px;
-      top: 35px;
+      left: 10px;
+      top: 30px;
+      width: 230px;
+      height: 145px;
+      border-radius: 12px;
+      background:
+        radial-gradient(circle at 70% 40%, rgba(20, 184, 166, 0.35), transparent 30%),
+        linear-gradient(135deg, #0f172a, #164e63);
+      box-shadow: 0 18px 30px rgba(15, 23, 42, 0.22);
+      border: 8px solid #0f172a;
     }
-
-    .laptop::after {
+    
+    .keyboard {
+      position: absolute;
+      left: -5px;
+      top: 185px;
+      width: 270px;
+      height: 18px;
+      border-radius: 0 0 24px 24px;
+      background: linear-gradient(to bottom, #e5e7eb, #cbd5e1);
+    }
+    
+    .screen-cloud {
+      position: absolute;
+      left: 72px;
+      top: 45px;
+      color: white;
+      font-size: 4.5rem;
+      line-height: 1;
+    }
+    
+    .screen-line {
+      position: absolute;
+      left: 22px;
+      height: 4px;
+      border-radius: 999px;
+      background-color: rgba(94, 234, 212, 0.75);
+    }
+    
+    .line-one {
+      top: 24px;
+      width: 46px;
+    }
+    
+    .line-two {
+      top: 42px;
+      width: 72px;
+    }
+    
+    .node {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #5eead4;
+      box-shadow: 0 0 0 5px rgba(94, 234, 212, 0.12);
+    }
+    
+    .node-one {
+      right: 42px;
+      top: 38px;
+    }
+    
+    .node-two {
+      right: 80px;
+      top: 72px;
+    }
+    
+    .node-three {
+      right: 35px;
+      top: 98px;
+    }
+    
+    .node-four {
+      right: 95px;
+      top: 110px;
+    }
+    
+    .database {
+      position: absolute;
+      right: 0;
+      bottom: 20px;
+      width: 86px;
+      height: 110px;
+      border-radius: 50% / 14%;
+      background: linear-gradient(180deg, #67e8f9, #0f766e);
+      box-shadow: 0 16px 24px rgba(15, 118, 110, 0.18);
+      overflow: hidden;
+    }
+    
+    .database::before {
       content: "";
       position: absolute;
-      width: 300px;
-      height: 14px;
-      background: #cbd5e1;
-      border-radius: 0 0 18px 18px;
-      left: -20px;
-      bottom: -18px;
+      inset: 0 0 auto 0;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.35);
+    }
+    
+    .database div {
+      height: 33%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.45);
     }
 
     .button-row {
@@ -242,6 +343,7 @@
 
 <body>
   <main class="hero">
+    <div class="flow-lines"></div>
     <div class="top-visuals">
       <div class="cloud-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -336,7 +438,24 @@
 
         <div class="visual-card">
           <div class="dots"></div>
-          <div class="laptop"></div>
+        
+          <div class="cloud-laptop">
+            <div class="screen">
+              <div class="screen-line line-one"></div>
+              <div class="screen-line line-two"></div>
+              <div class="screen-cloud">☁</div>
+              <div class="node node-one"></div>
+              <div class="node node-two"></div>
+              <div class="node node-three"></div>
+              <div class="node node-four"></div>
+            </div>
+            <div class="keyboard"></div>
+            <div class="database">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
         </div>
       </div>
 
