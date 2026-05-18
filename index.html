@@ -59,24 +59,25 @@
       overflow: hidden;
       position: relative;
     }
-    
-    .top-image img {
-      position: absolute;
-      width: 760px;
-    }
-    
-    /* TOP LEFT CLOUD */
-    .cloud-image img {
-      left: 0;
-      top: 0;
-    }
-    
-    /* TOP RIGHT AI */
-    .ai-image img {
-      left: -380px;
-      top: 0;
+
+    .image-crop {
+      background-image: url("tech-icons.png");
+      background-repeat: no-repeat;
+      background-size: 1600px 1200px;
     }
 
+    .cloud-image {
+      width: 320px;
+      height: 170px;
+      background-position: 40px 10px;
+    }
+
+    .ai-image {
+      width: 240px;
+      height: 170px;
+      background-position: -760px 10px;
+    }
+    
     .card {
       background-color: rgba(255, 255, 255, 0.96);
       padding: 48px;
@@ -213,12 +214,9 @@
   <main class="hero">
     <div class="flow-lines"></div>
     <div class="top-visuals">
-      <div class="top-image cloud-image">
-        <img src="tech-icons.png" alt="Cloud Technology">
-      </div>
-      <div class="top-image ai-image">
-        <img src="tech-icons.png" alt="AI Chip">
-      </div>
+    <div class="top-image cloud-image image-crop"></div>
+    
+    <div class="top-image ai-image image-crop"></div>
     </div>
 
     <div class="card">
@@ -237,8 +235,7 @@
           <p class="tagline">AI Practitioner | Senior AI Program Leader | Senior AI Engagement Manager | AWS Cloud Practitioner | Forward Deployed Strategist | AI Transformation Lead</p>
           
           <p>
-            I’m targeting AI-related cloud-focused roles, building on a foundation of cross-functional program execution
-            and customer engagement.
+            Focus:  Transitioning into AI-focused cloud and enterprise transformation roles, building on a strong foundation of program leadership and customer engagement while actively developing hands-on AI practitioner, orchestration, and deployment capabilities.
           </p>
 
         </div>
