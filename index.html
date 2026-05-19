@@ -169,7 +169,8 @@
     }
 
     .button {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
       padding: 15px 26px;
       background: linear-gradient(to right, #10a37f, #0f766e);
       color: white;
@@ -203,6 +204,29 @@
       max-width: 520px;
       height: auto;
       display: block;
+    }
+
+    .right-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .linkedin-row {
+      margin-top: 26px;
+    }
+    
+    .linkedin-button {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 30px;
+      border-radius: 14px;
+    }
+    
+    .linkedin-button img {
+      width: 28px;
+      height: 28px;
     }
     
     @media (max-width: 800px) {
@@ -313,15 +337,26 @@
           </div>
         </div>
       
+      <div class="right-column">
+      
         <div class="visual-card">
           <img src="cloud-laptop.png" alt="Cloud laptop and database illustration">
         </div>
-      </div>
       
-      <div class="button-row">
-        <a class="button" href="https://www.linkedin.com/in/burrell/" target="_blank">
-          Visit My LinkedIn
-        </a>
+        <div class="button-row linkedin-row">
+          <a class="button linkedin-button"
+             href="https://www.linkedin.com/in/burrell/"
+             target="_blank">
+      
+            <img src="linkedin-logo.png" alt="LinkedIn Logo">
+      
+            <span>Visit My LinkedIn</span>
+      
+          </a>
+        </div>
+      
+      </div>
+        
       </div>
       
       </div>     
