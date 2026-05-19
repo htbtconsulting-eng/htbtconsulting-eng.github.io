@@ -185,6 +185,26 @@
       box-shadow: 0 10px 24px rgba(16, 163, 127, 0.30);
     }
 
+    .visual-card {
+      min-height: 320px;
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at top right, rgba(191, 219, 254, 0.7), transparent 35%),
+        linear-gradient(135deg, #effff9, #f5f9ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      overflow: hidden;
+    }
+    
+    .visual-card img {
+      width: 100%;
+      max-width: 430px;
+      height: auto;
+      display: block;
+    }
+    
     @media (max-width: 800px) {
       .content-grid,
       .intro-grid,
@@ -202,26 +222,6 @@
 
       .card {
         padding: 30px;
-      }
-
-      .visual-card {
-        min-height: 320px;
-        border-radius: 26px;
-        background:
-          radial-gradient(circle at top right, rgba(191, 219, 254, 0.7), transparent 35%),
-          linear-gradient(135deg, #effff9, #f5f9ff);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 24px;
-        overflow: hidden;
-      }
-      
-      .visual-card img {
-        width: 100%;
-        max-width: 430px;
-        height: auto;
-        display: block;
       }
       
     }
@@ -261,11 +261,15 @@
 
       <hr class="divider">
 
-      <div class="content-grid">
-        <div>
+        <div class="content-grid">
+          <div>
+            <!-- Projects, Resume, Certifications sections stay here -->
+          </div>
+        
           <div class="visual-card">
             <img src="cloud-laptop.png" alt="Cloud laptop and database illustration">
           </div>
+        </div>
           <div class="section-grid">
             <div class="icon-circle">
               <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
